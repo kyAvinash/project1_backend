@@ -1,0 +1,843 @@
+[
+  {
+    "name": "Electric Bike Model X",
+    "type": "E-cycle",
+    "brand": "E-BikeCo",
+    "model": "X2000",
+    "year": 2024,
+    "price": 1200,
+    "imageUrls": [
+      "https://www.cyclezoo.com/cdn/shop/products/37-home-model-x-DST.jpg?v=1675198440",
+      "https://electricbikereview.com/wp-content/assets/2019/06/electric-bike-company-model-x-stock-high-step-black-1200x800-c-default.jpg"
+    ],
+    "description": "A high-performance electric bike with advanced features.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 25,
+    "categories": ["E-cycle", "Electric"],
+    "tags": ["electric", "bike", "high-performance"],
+    "weight": 22.5,
+    "dimensions": {
+      "length": 180,
+      "width": 60,
+      "height": 120
+    },
+    "material": "Aluminum",
+    "color": "Black",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 24,
+    "shipping": true,
+    "shippingCost": 50,
+    "shippingDuration": 7,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Excellent bike, highly recommend!",
+        "reviewerName": "Avinash Yadav"
+      }
+    ]
+  },
+  {
+    "name": "Mountain Bike Pro",
+    "type": "Cycle",
+    "brand": "TrailMaster",
+    "model": "Pro2024",
+    "year": 2024,
+    "price": 800,
+    "imageUrls": [
+      "https://c02.purpledshub.com/uploads/sites/39/2023/07/AM9A8836-Edit-285f332.jpg?w=1029&webp=1",
+      "https://www.cyclingboutique.in/cdn/shop/products/pro-java-mountain-mtb-red-black-m-pro-java-mountain-bike-fuga-3-mtb-27-5-30201775816867_1024x1024.jpg?v=1662167672"
+    ],
+    "description": "A robust mountain bike built for rugged terrains.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 30,
+    "categories": ["Cycle", "Mountain"],
+    "tags": ["mountain", "bike", "rugged"],
+    "weight": 15.0,
+    "dimensions": {
+      "length": 175,
+      "width": 65,
+      "height": 115
+    },
+    "material": "Steel",
+    "color": "Red",
+    "size": "Large",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 40,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Great bike for the price, though it could use better suspension.",
+        "reviewerName": "JR Ram Nath"
+      }
+    ]
+  },
+  {
+    "name": "Bike Helmet Pro",
+    "type": "Accessory",
+    "brand": "SafeRide",
+    "model": "HP2024",
+    "year": 2024,
+    "price": 60,
+    "imageUrls": [
+      "https://powersports.in/cdn/shop/files/Mt-Thunder3ProOpenRed-1_1800x1800.jpg?v=1689827158",
+      "https://m.media-amazon.com/images/I/616sRwz4NPL._AC_UF894,1000_QL80_.jpg"
+    ],
+    "description": "A high-quality helmet with advanced safety features.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 50,
+    "categories": ["Accessory", "Safety"],
+    "tags": ["helmet", "safety", "gear"],
+    "weight": 0.8,
+    "dimensions": {
+      "length": 25,
+      "width": 20,
+      "height": 20
+    },
+    "material": "Polycarbonate",
+    "color": "Blue",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 6,
+    "shipping": true,
+    "shippingCost": 10,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Very comfortable and provides great protection.",
+        "reviewerName": "Lakshuman Singh"
+      }
+    ]
+  },
+  {
+    "name": "Bike Pump Deluxe",
+    "type": "Part",
+    "brand": "PumpMaster",
+    "model": "Deluxe2024",
+    "year": 2024,
+    "price": 30,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/51wMKhkFamL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/510dFEUTZkL._AC_UF894,1000_QL80_.jpg"
+    ],
+    "description": "A durable bike pump suitable for all types of bikes.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 100,
+    "categories": ["Part", "Accessory"],
+    "tags": ["pump", "bicycle", "accessory"],
+    "weight": 1.5,
+    "dimensions": {
+      "length": 30,
+      "width": 15,
+      "height": 10
+    },
+    "material": "Aluminum",
+    "color": "Black",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 8,
+    "shippingDuration": 4,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Works well, but a bit bulky.",
+        "reviewerName": "John Deo"
+      }
+    ]
+  },
+
+  {
+    "name": "Hybrid Bike Comfort",
+    "type": "Cycle",
+    "brand": "UrbanRider",
+    "model": "Comfort500",
+    "year": 2024,
+    "price": 950,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/61WP0G1-84L._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/81AnExLhyJL._AC_UF894,1000_QL80_.jpg"
+    ],
+    "description": "A versatile hybrid bike perfect for city commuting.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 35,
+    "categories": ["Cycle", "Hybrid"],
+    "tags": ["hybrid", "city", "commuting"],
+    "weight": 12.0,
+    "dimensions": {
+      "length": 175,
+      "width": 55,
+      "height": 110
+    },
+    "material": "Aluminum",
+    "color": "Green",
+    "size": "Large",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 40,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Good bike for everyday use.",
+        "reviewerName": "Ashish Kumar"
+      }
+    ]
+  },
+  {
+    "name": "Bike Saddle Comfort Plus",
+    "type": "Accessory",
+    "brand": "RideEase",
+    "model": "ComfortPlus2024",
+    "year": 2024,
+    "price": 45,
+    "imageUrls": [
+      "https://www.cyclingboutique.in/cdn/shop/products/MODELXCOMFORTPLUS1_1024x1024.jpg?v=1664393942",
+      "https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto/dmp.pon.bike/1280_Y4yFo8ku0Bs21AGj.jpg"
+    ],
+    "description": "An ergonomic saddle designed for maximum comfort.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 60,
+    "categories": ["Accessory", "Comfort"],
+    "tags": ["saddle", "comfort", "bike"],
+    "weight": 0.7,
+    "dimensions": {
+      "length": 28,
+      "width": 18,
+      "height": 8
+    },
+    "material": "Synthetic",
+    "color": "Black",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 6,
+    "shipping": true,
+    "shippingCost": 8,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Very comfortable, but could be a bit softer.",
+        "reviewerName": "Rohan Tyagi"
+      }
+    ]
+  },
+  {
+    "name": "Electric Scooter Urban Glide",
+    "type": "E-cycle",
+    "brand": "ScootX",
+    "model": "Glide2024",
+    "year": 2024,
+    "price": 900,
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB_kl9WLO2J8VtX9U2-L6B6sud7YowPgPzkQ&s",
+      "https://cdn.drouot.com/m/image/lot?size=fullHD&path=238/11519/a17feeac8bd5b0b9aa30bf71b6f60d2a"
+    ],
+    "description": "A sleek electric scooter perfect for urban commuting.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 40,
+    "categories": ["E-cycle", "Scooter"],
+    "tags": ["electric", "scooter", "urban"],
+    "weight": 15.0,
+    "dimensions": {
+      "length": 150,
+      "width": 45,
+      "height": 100
+    },
+    "material": "Aluminum",
+    "color": "White",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 30,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Great scooter for city life, very convenient.",
+        "reviewerName": "Abhishek Yadav"
+      }
+    ]
+  },
+  {
+    "name": "Bicycle Handlebar Grips",
+    "type": "Part",
+    "brand": "GripMaster",
+    "model": "ProGrip2024",
+    "year": 2024,
+    "price": 20,
+    "imageUrls": [
+      "https://rukminim2.flixcart.com/image/850/1000/kvvad8w0/bicycle-handle-grip/6/1/z/mountain-bike-cycle-handlebar-grips-soft-rubber-anti-slip-handle-original-imag8z7f6r7pdkr4.jpeg?q=20&crop=false",
+      "https://m.media-amazon.com/images/I/81b59R8+zTL.jpg"
+    ],
+    "description": "Comfortable and durable handlebar grips for all bikes.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 150,
+    "categories": ["Part", "Accessory"],
+    "tags": ["grips", "handlebar", "bike"],
+    "weight": 0.3,
+    "dimensions": {
+      "length": 12,
+      "width": 4,
+      "height": 4
+    },
+    "material": "Rubber",
+    "color": "Black",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 6,
+    "shipping": true,
+    "shippingCost": 5,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Good grips, but a bit slippery when wet.",
+        "reviewerName": "Sikender Ram Sanker"
+      }
+    ]
+  },
+  {
+    "name": "Kids' Bike Explorer",
+    "type": "Cycle",
+    "brand": "JuniorRider",
+    "model": "Explorer2024",
+    "year": 2024,
+    "price": 250,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/71Nd3T7OjmL.jpg",
+      "https://riders.co.in/cdn/shop/products/Untitleddesign_4_1f34d143-b7c1-45df-8409-3dbf10cfc460_1200x.png?v=1672854423"
+    ],
+    "description": "A sturdy and safe bike for young explorers.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 60,
+    "categories": ["Cycle", "Kids"],
+    "tags": ["kids", "bike", "explorer"],
+    "weight": 10.0,
+    "dimensions": {
+      "length": 130,
+      "width": 40,
+      "height": 85
+    },
+    "material": "Steel",
+    "color": "Blue",
+    "size": "Small",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 20,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Perfect bike for kids, very safe.",
+        "reviewerName": "Ramanand Swami"
+      }
+    ]
+  },
+  {
+    "name": "Folding Bike Compact",
+    "type": "Cycle",
+    "brand": "FoldX",
+    "model": "Compact2024",
+    "year": 2024,
+    "price": 600,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/61V5PbVYlNL._AC_UF894,1000_QL80_.jpg",
+      "https://images-cdn.ubuy.co.in/635f8185b327ec398f0b9212-20in-folding-bikes-for-adults-city.jpg"
+    ],
+    "description": "A lightweight folding bike perfect for urban travel.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 25,
+    "categories": ["Cycle", "Folding"],
+    "tags": ["folding", "bike", "compact"],
+    "weight": 9.0,
+    "dimensions": {
+      "length": 140,
+      "width": 45,
+      "height": 95
+    },
+    "material": "Aluminum",
+    "color": "Gray",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 25,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Convenient for city commuting, though the ride can be a bit rough.",
+        "reviewerName": "Shivaram Mahesh"
+      }
+    ]
+  },
+  {
+    "name": "Electric Skateboard Cruiser",
+    "type": "E-cycle",
+    "brand": "SkateTech",
+    "model": "CruiserX2024",
+    "year": 2024,
+    "price": 450,
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfd0HWfHZgb0ltKSa2LmxeCm5VSKjFJEu5QQ&s",
+      "https://global.razor.com/uk/wp-content/uploads/sites/2/2022/02/razorX-cruiser-skateboard-remote.jpg"
+    ],
+    "description": "An electric skateboard for smooth urban cruising.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 50,
+    "categories": ["E-cycle", "Skateboard"],
+    "tags": ["electric", "skateboard", "cruiser"],
+    "weight": 7.0,
+    "dimensions": {
+      "length": 80,
+      "width": 25,
+      "height": 15
+    },
+    "material": "Bamboo",
+    "color": "Natural",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 15,
+    "shippingDuration": 4,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Very fun to ride, and the battery lasts a long time.",
+        "reviewerName": "Lalan Gupta"
+      }
+    ]
+  },
+  {
+    "name": "Cycling Gloves Pro",
+    "type": "Accessory",
+    "brand": "GripWear",
+    "model": "ProGlove2024",
+    "year": 2024,
+    "price": 25,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/71Q--Vurk-L.jpg",
+      "https://m.media-amazon.com/images/I/81Ngkxn4aJL.jpg"
+    ],
+    "description": "Comfortable cycling gloves with excellent grip.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 200,
+    "categories": ["Accessory", "Gear"],
+    "tags": ["gloves", "cycling", "pro"],
+    "weight": 0.2,
+    "dimensions": {
+      "length": 15,
+      "width": 10,
+      "height": 2
+    },
+    "material": "Leather",
+    "color": "Red",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 6,
+    "shipping": true,
+    "shippingCost": 5,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Very comfortable and grippy, but a bit tight.",
+        "reviewerName": "Nina Parker"
+      }
+    ]
+  },
+  {
+    "name": "Electric Bike Speedster",
+    "type": "E-cycle",
+    "brand": "VoltCycle",
+    "model": "Speedster2024",
+    "year": 2024,
+    "price": 1600,
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSks-5DMSVWGMcYyCRYw7dChzwVq9__LZqb7g&s",
+      "https://eco-move.co.uk/wp-content/uploads/2023/11/moustache-Samedi-28.1_0002_standard-frame-800x800.jpg"
+    ],
+    "description": "A high-speed electric bike for adrenaline seekers.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 15,
+    "categories": ["E-cycle", "Sport"],
+    "tags": ["electric", "bike", "speed"],
+    "weight": 20.0,
+    "dimensions": {
+      "length": 185,
+      "width": 60,
+      "height": 125
+    },
+    "material": "Carbon Fiber",
+    "color": "Black",
+    "size": "Large",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 24,
+    "shipping": true,
+    "shippingCost": 55,
+    "shippingDuration": 7,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Incredible speed and performance, totally worth it.",
+        "reviewerName": "Steve Smith"
+      }
+    ]
+  },
+  {
+    "name": "City Bike Urbanite",
+    "type": "Cycle",
+    "brand": "CityRide",
+    "model": "Urbanite2024",
+    "year": 2024,
+    "price": 700,
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNdkiEyLCupk7nQFF1ReX9caqRNKrl31u2ww&s",
+      "https://image.made-in-china.com/202f0j00mOntrviIlApD/500W-Low-Price-Israel-Folding-Electric-Bicycle-Folding-E-Bike-Foldable-Fat-Tire-Electric-Bike-Rsd507.webp"
+    ],
+    "description": "A stylish and reliable bike for city commuting.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 45,
+    "categories": ["Cycle", "City"],
+    "tags": ["city", "bike", "urban"],
+    "weight": 13.0,
+    "dimensions": {
+      "length": 170,
+      "width": 50,
+      "height": 105
+    },
+    "material": "Steel",
+    "color": "Black",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 35,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Great for city commuting, though a bit heavy.",
+        "reviewerName": "Paras Nath"
+      }
+    ]
+  },
+  {
+    "name": "Bike Lock Heavy Duty",
+    "type": "Accessory",
+    "brand": "SecureLock",
+    "model": "HeavyDuty2024",
+    "year": 2024,
+    "price": 35,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/71PM8lEiBTL._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/71LumU6sOvL._AC_UF1000,1000_QL80_.jpg"
+    ],
+    "description": "A strong and reliable bike lock for maximum security.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 120,
+    "categories": ["Accessory", "Security"],
+    "tags": ["lock", "security", "bike"],
+    "weight": 1.2,
+    "dimensions": {
+      "length": 30,
+      "width": 10,
+      "height": 3
+    },
+    "material": "Steel",
+    "color": "Black",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 10,
+    "shippingDuration": 4,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Very strong lock, feels very secure.",
+        "reviewerName": "Rakesh Sineha"
+      }
+    ]
+  },
+  {
+    "name": "Mountain Bike Adventure",
+    "type": "Cycle",
+    "brand": "PeakRider",
+    "model": "Adventure2024",
+    "year": 2024,
+    "price": 950,
+    "imageUrls": [
+      "https://bumsonthesaddle.com/cdn/shop/products/fuji-adventure-27-5er-satin-silver-bumsonthesaddle-2.jpg?v=1719811073&width=1080",
+      "hhttps://img.etimg.com/thumb/width-420,height-315,imgsize-54232,resizemode-75,msid-111736133/top-trending-products/health-fitness/exercise-fitness/best-mountain-bikes-to-explore-and-adventure/mountain-bikes.jpg"
+    ],
+    "description": "A rugged mountain bike built for tough trails.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 30,
+    "categories": ["Cycle", "Mountain"],
+    "tags": ["mountain", "bike", "adventure"],
+    "weight": 16.0,
+    "dimensions": {
+      "length": 180,
+      "width": 65,
+      "height": 120
+    },
+    "material": "Aluminum",
+    "color": "Green",
+    "size": "Large",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 45,
+    "shippingDuration": 6,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Amazing bike for tough trails, very durable.",
+        "reviewerName": "Sneha Rani"
+      }
+    ]
+  },
+  {
+    "name": "Bike Light Set Pro",
+    "type": "Accessory",
+    "brand": "LightBright",
+    "model": "ProLight2024",
+    "year": 2024,
+    "price": 50,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/71DxDiyahjL._AC_UF1000,1000_QL80_.jpg",
+      "https://performancebikeblog.wordpress.com/wp-content/uploads/2017/09/40-5582-blk-angle3.jpg?w=768"
+    ],
+    "description": "A powerful bike light set for safe night riding.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 90,
+    "categories": ["Accessory", "Safety"],
+    "tags": ["light", "bike", "safety"],
+    "weight": 0.4,
+    "dimensions": {
+      "length": 12,
+      "width": 5,
+      "height": 5
+    },
+    "material": "Plastic",
+    "color": "Black",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 8,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Bright lights, but battery life could be better.",
+        "reviewerName": "Ramakant Datta"
+      }
+    ]
+  },
+  {
+    "name": "Road Bike SpeedPro",
+    "type": "Cycle",
+    "brand": "SpeedX",
+    "model": "SpeedPro2024",
+    "year": 2024,
+    "price": 1400,
+    "imageUrls": [
+      "https://dbz-images.dubizzle.com/images/2024/07/28/9f47e00de8fb4fbc8de656b207002296-.jpeg?impolicy=lpc",
+      "https://media.karousell.com/media/photos/products/2021/8/17/cannondale_caad12_1629175215_26fa13f8_progressive.jpg"
+    ],
+    "description": "A top-tier road bike for competitive cycling.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 18,
+    "categories": ["Cycle", "Road"],
+    "tags": ["road", "bike", "speed"],
+    "weight": 8.0,
+    "dimensions": {
+      "length": 170,
+      "width": 45,
+      "height": 100
+    },
+    "material": "Carbon Fiber",
+    "color": "White",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 24,
+    "shipping": true,
+    "shippingCost": 50,
+    "shippingDuration": 7,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Superb bike for serious cyclists.",
+        "reviewerName": "Ravi Satish"
+      }
+    ]
+  },
+  {
+    "name": "Electric Bike CommuteX",
+    "type": "E-cycle",
+    "brand": "VoltCycle",
+    "model": "CommuteX2024",
+    "year": 2024,
+    "price": 1100,
+    "imageUrls": [
+      "https://m.media-amazon.com/images/I/81eq+goyy6L._AC_UF894,1000_QL80_.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzt8Fvxf3dBovlwa3JRxNToylzV16kUTX9PKIUaWRBozGlyhcE31GzkLZC9LPchgOPLGA&usqp=CAU"
+    ],
+    "description": "An electric bike designed for daily commuting.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 22,
+    "categories": ["E-cycle", "Commuting"],
+    "tags": ["electric", "bike", "commuting"],
+    "weight": 18.0,
+    "dimensions": {
+      "length": 175,
+      "width": 55,
+      "height": 110
+    },
+    "material": "Aluminum",
+    "color": "Blue",
+    "size": "Large",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 40,
+    "shippingDuration": 6,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Great for daily use, though a bit heavy.",
+        "reviewerName": "Uma Patel"
+      }
+    ]
+  },
+  {
+    "name": "Bicycle Pedals Pro",
+    "type": "Part",
+    "brand": "PedalKing",
+    "model": "ProPedal2024",
+    "year": 2024,
+    "price": 40,
+    "imageUrls": [
+      "https://www.geneticbikes.com/wp-content/uploads/2020/11/PDGETPSK-pair-col.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVwQwaz2sXcwRKQq1AtjXm2Op4BpErWFPyIPudTpaqq_8eff4ZXywpNjrnLv7VjXaMKAU&usqp=CAU"
+    ],
+    "description": "Durable and lightweight pedals for professional cyclists.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 70,
+    "categories": ["Part", "Accessory"],
+    "tags": ["pedals", "bike", "pro"],
+    "weight": 0.5,
+    "dimensions": {
+      "length": 10,
+      "width": 7,
+      "height": 4
+    },
+    "material": "Alloy",
+    "color": "Silver",
+    "size": "Standard",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 12,
+    "shipping": true,
+    "shippingCost": 7,
+    "shippingDuration": 3,
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Very sturdy and lightweight, great for long rides.",
+        "reviewerName": "John Deo"
+      }
+    ]
+  },
+  {
+    "name": "Hybrid Bike Flexi",
+    "type": "Cycle",
+    "brand": "FlexiRide",
+    "model": "Flexi2024",
+    "year": 2024,
+    "price": 800,
+    "imageUrls": [
+      "https://kross-europe.eu/media/catalog/product/cache/757cf9bc681efb1371a153d803a3d73f/0/0/001-images_2F44_2F44694_2FKRFH1Z20X11U004949-KR-FLEX-HYBRID-10-1_2_1.jpg",
+      "https://ik.imagekit.io/cycles/electric-bike/hybrid/WhatsApp%20Image%202024-05-05%20at%2020.04.51_049fe59f%20(Medium)%20(1)_daot72HVQ9.jpg?updatedAt=1714919968471"
+    ],
+    "description": "A versatile hybrid bike suitable for both city and trail rides.",
+    "favorite": false,
+    "availableInStock": true,
+    "stockQuantity": 35,
+    "categories": ["Cycle", "Hybrid"],
+    "tags": ["hybrid", "bike", "flexi"],
+    "weight": 12.0,
+    "dimensions": {
+      "length": 165,
+      "width": 50,
+      "height": 110
+    },
+    "material": "Aluminum",
+    "color": "Silver",
+    "size": "Medium",
+    "condition": "New",
+    "warranty": true,
+    "warrantyDuration": 18,
+    "shipping": true,
+    "shippingCost": 30,
+    "shippingDuration": 5,
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Great all-around bike, handles well on different terrains.",
+        "reviewerName": "Rohani Soni"
+      }
+    ]
+  }
+]
