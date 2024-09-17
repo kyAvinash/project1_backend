@@ -17,6 +17,7 @@ const { initializeDatabase } = require("./db/db.connect");
 //const fs = require("fs");
 
 const Product = require("./models/bicycles.models");
+const Contact = require("./models/contactUS.models");
 
 app.use(express.json());
 
@@ -72,6 +73,57 @@ function seedData(){
 
 //seedData();
 */
+
+
+// Code for get In touch form.
+
+async function saveContactData(contactData){
+  try{
+    const contact = new Contact(contactData);
+    const savedContact = await contact.save();
+    return savedContact
+  }catch(error){
+    throw error;
+  }
+}
+
+app.post("/contact", async(req,res)=>{
+  try{
+    const savedContact = await saveContactData(req.body);
+    res.status(201).json({message: "Form submitted successfully! We will contact you soon! Thank You."})
+  }catch(error){
+    res.status(500).json({error: "Error submitting form."})
+  }
+})
+
+
+async function getContactData(){
+  try{
+    const contacts = await Contact.find();
+    return contacts;
+  }catch(error){
+    //console.log(error)
+    return {error: "Error getting Contacts"}
+  }
+}
+
+
+app.get("/contacts", async(req,res)=>{
+  try{
+    const contacts = await getContactData();
+    if(contacts.length!=0){
+      res.json(contacts);
+    }else{
+      res.status(404).json({message: "No Contact details found."})
+    }
+  }catch(error){
+    res.status(500).json({error: "Error getting Contacts"})
+  }
+})
+
+
+
+
 
 // Get all products
 async function getAllProducts() {
