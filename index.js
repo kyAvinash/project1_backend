@@ -334,7 +334,7 @@ async function getProductsIfFavorite(){
   }
 }
 
-app.get("/products/favorite", async(req,res)=>{
+app.get("/products/favorite/isFavorite", async(req,res)=>{
   try{
     const favorites = await getProductsIfFavorite();
     if(favorites.length !=0){
