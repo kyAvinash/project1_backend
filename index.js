@@ -329,6 +329,7 @@ async function getProductsIfFavorite(){
     const products = await Product.find({favorite: true});
     return products;
   }catch(error){
+    console.error("Error fetching favorite products:", error);
     throw error;
   }
 }
