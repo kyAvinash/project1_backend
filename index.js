@@ -18,6 +18,7 @@ const { initializeDatabase } = require("./db/db.connect");
 
 const Product = require("./models/bicycles.models");
 const Contact = require("./models/contactUS.models");
+const Blog = require("./models/blogPost.models");
 
 app.use(express.json());
 
@@ -74,6 +75,51 @@ function seedData(){
 //seedData();
 */
 
+// code for blog.
+
+async function getBlogData(){
+  try{
+    const blogs = await Blog.find();
+    return blogs;
+  }catch(error){
+    return {error: "Error  While getting Blogs"}
+  }
+}
+
+app.get("/blogs", async(req,res)=>{
+  try{
+    const blogs = await getBlogData();
+    if(blogs.length!=0){
+      res.json(blogs);
+    }else{
+      res.status(404).json({message: "No Blogs Found."})
+    }
+  }catch(error){
+    res.status(500).json({error: "Error getting Blogs"})
+  }
+})
+
+async function saveBlogsData(blogData){
+  try{
+    const blog = new Blog(blogData);
+    const savedBlog = await blog.save();
+    return savedBlog;
+  }catch(error){
+    throw error;
+  }
+}
+
+
+app.post("/blogs",async(req,res)=>{
+  try{
+    const savedBlog = await saveBlogsData(req.body);
+    res.status(201).json({message: "Blog Posted successfully!!! Thank You."})
+  }catch(error){
+    res.status(500).json({error: "Error while submitting form."})
+  }
+})
+
+
 
 // Code for get In touch form.
 
@@ -87,7 +133,7 @@ async function saveContactData(contactData){
   }
 }
 
-app.post("/contact", async(req,res)=>{
+app.post("/contacts", async(req,res)=>{
   try{
     const savedContact = await saveContactData(req.body);
     res.status(201).json({message: "Form submitted successfully! We will contact you soon! Thank You."})
