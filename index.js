@@ -342,6 +342,7 @@ app.get("/products/favorite", async(req,res)=>{
       res.status(404).json({message: "There is no favorite Products."})
     } 
   }catch(error){
+    console.error(error);
     res.status(500).json({error: "Error Getting Favorite Product."})
   }
 })
