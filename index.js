@@ -169,8 +169,6 @@ app.get("/contacts", async(req,res)=>{
 
 
 
-
-
 // Get all products
 async function getAllProducts() {
   try {
@@ -326,6 +324,27 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
+async function getProductsIfFavorite(){
+  try{
+    const products = await Product.find({favorite: true});
+    return products;
+  }catch(error){
+    throw error;
+  }
+}
+
+app.get("/products/favorite", async(req,res)=>{
+  try{
+    const favorites = await getProductsIfFavorite();
+    if(favorites.length !=0){
+      res.json(favorites);
+    }else{
+      res.status(404).json({message: "There is no favorite Products."})
+    } 
+  }catch(error){
+    res.status(500).json({error: "Error Getting Favorite Product."})
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
