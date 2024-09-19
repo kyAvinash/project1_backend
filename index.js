@@ -77,97 +77,93 @@ function seedData(){
 
 // code for blog.
 
-async function getBlogData(){
-  try{
+async function getBlogData() {
+  try {
     const blogs = await Blog.find();
     return blogs;
-  }catch(error){
-    return {error: "Error  While getting Blogs"}
+  } catch (error) {
+    return { error: "Error  While getting Blogs" };
   }
 }
 
-app.get("/blogs", async(req,res)=>{
-  try{
+app.get("/blogs", async (req, res) => {
+  try {
     const blogs = await getBlogData();
-    if(blogs.length!=0){
+    if (blogs.length != 0) {
       res.json(blogs);
-    }else{
-      res.status(404).json({message: "No Blogs Found."})
+    } else {
+      res.status(404).json({ message: "No Blogs Found." });
     }
-  }catch(error){
-    res.status(500).json({error: "Error getting Blogs"})
+  } catch (error) {
+    res.status(500).json({ error: "Error getting Blogs" });
   }
-})
+});
 
-async function saveBlogsData(blogData){
-  try{
+async function saveBlogsData(blogData) {
+  try {
     const blog = new Blog(blogData);
     const savedBlog = await blog.save();
     return savedBlog;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-
-app.post("/blogs",async(req,res)=>{
-  try{
+app.post("/blogs", async (req, res) => {
+  try {
     const savedBlog = await saveBlogsData(req.body);
-    res.status(201).json({message: "Blog Posted successfully!!! Thank You."})
-  }catch(error){
-    res.status(500).json({error: "Error while submitting form."})
+    res.status(201).json({ message: "Blog Posted successfully!!! Thank You." });
+  } catch (error) {
+    res.status(500).json({ error: "Error while submitting form." });
   }
-})
-
-
+});
 
 // Code for get In touch form.
 
-async function saveContactData(contactData){
-  try{
+async function saveContactData(contactData) {
+  try {
     const contact = new Contact(contactData);
     const savedContact = await contact.save();
-    return savedContact
-  }catch(error){
+    return savedContact;
+  } catch (error) {
     throw error;
   }
 }
 
-app.post("/contacts", async(req,res)=>{
-  try{
+app.post("/contacts", async (req, res) => {
+  try {
     const savedContact = await saveContactData(req.body);
-    res.status(201).json({message: "Form submitted successfully! We will contact you soon! Thank You."})
-  }catch(error){
-    res.status(500).json({error: "Error submitting form."})
+    res.status(201).json({
+      message:
+        "Form submitted successfully! We will contact you soon! Thank You.",
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Error submitting form." });
   }
-})
+});
 
-
-async function getContactData(){
-  try{
+async function getContactData() {
+  try {
     const contacts = await Contact.find();
     return contacts;
-  }catch(error){
+  } catch (error) {
     //console.log(error)
-    return {error: "Error getting Contacts"}
+    return { error: "Error getting Contacts" };
   }
 }
 
-
-app.get("/contacts", async(req,res)=>{
-  try{
+app.get("/contacts", async (req, res) => {
+  try {
     const contacts = await getContactData();
-    if(contacts.length!=0){
+    if (contacts.length != 0) {
       res.json(contacts);
-    }else{
-      res.status(404).json({message: "No Contact details found."})
+    } else {
+      res.status(404).json({ message: "No Contact details found." });
     }
-  }catch(error){
-    res.status(500).json({error: "Error getting Contacts"})
+  } catch (error) {
+    res.status(500).json({ error: "Error getting Contacts" });
   }
-})
-
-
+});
 
 // Get all products
 async function getAllProducts() {
@@ -258,49 +254,49 @@ app.get("products/model/:model", async (req, res) => {
   }
 });
 
-async function getProductsByYear(productYear){
-  try{
+async function getProductsByYear(productYear) {
+  try {
     const products = await Product.find({ year: productYear });
     return products;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-app.get("/products/year/:year", async (req, res) =>{
-  try{
+app.get("/products/year/:year", async (req, res) => {
+  try {
     const products = await getProductsByYear(req.params.year);
-    if(products.length != 0){
+    if (products.length != 0) {
       res.json(products);
-    }else{
-      res.status(404).json({message: "No products found"});
+    } else {
+      res.status(404).json({ message: "No products found" });
     }
-  }catch(error){
-    res.status(500).json({error: "Error getting products"});
+  } catch (error) {
+    res.status(500).json({ error: "Error getting products" });
   }
-})
+});
 
-async function getProductsByPrice(productPrice){
-  try{
+async function getProductsByPrice(productPrice) {
+  try {
     const products = await Product.find({ price: productPrice });
     return products;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-app.get("/products/price/:price", async (req, res) =>{
-  try{
+app.get("/products/price/:price", async (req, res) => {
+  try {
     const products = await getProductsByPrice(req.params.price);
-    if(products.length != 0){
+    if (products.length != 0) {
       res.json(products);
-    }else{
-      res.status(404).json({message: "No products found"});
+    } else {
+      res.status(404).json({ message: "No products found" });
     }
-  }catch(error){
-    res.status(500).json({error: "Error getting products"});
+  } catch (error) {
+    res.status(500).json({ error: "Error getting products" });
   }
-})
+});
 
 async function getProductById(productId) {
   try {
@@ -324,29 +320,57 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
-async function getProductsIfFavorite(){
-  try{
-    const products = await Product.find({favorite: true});
+async function getProductsIfFavorite() {
+  try {
+    const products = await Product.find({ favorite: true });
     return products;
-  }catch(error){
+  } catch (error) {
     console.error("Error fetching favorite products:", error);
     throw error;
   }
 }
 
-app.get("/products/favorite/isFavorite", async(req,res)=>{
-  try{
+app.get("/products/favorite/isFavorite", async (req, res) => {
+  try {
     const favorites = await getProductsIfFavorite();
-    if(favorites.length !=0){
+    if (favorites.length != 0) {
       res.json(favorites);
-    }else{
-      res.status(404).json({message: "There is no favorite Products."})
-    } 
-  }catch(error){
+    } else {
+      res.status(404).json({ message: "There is no favorite Products." });
+    }
+  } catch (error) {
     console.error(error);
-    res.status(500).json({error: "Error Getting Favorite Product."})
+    res.status(500).json({ error: "Error Getting Favorite Product." });
   }
-})
+});
+
+async function updateFavorite(productId, dataToUpdate) {
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      productId,
+      dataToUpdate,
+      { new: true }
+    );
+    return updatedProduct;
+  } catch (error) {
+    console.error("Error in updating Favorite.");
+    return error;
+  }
+}
+
+app.post("/products/favorite/isFavorite/:productId", async (req, res) => {
+  try {
+    const updatedProduct = await updateFavorite(req.params.productId, req.body);
+
+    if (updatedProduct) {
+      res.status(200).json({ message: "Favorite updated successfully" });
+    } else {
+      res.status(404).json({ error: "Product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Failed to update favorite" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
