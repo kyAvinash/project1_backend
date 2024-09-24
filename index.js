@@ -244,7 +244,7 @@ async function getProductsByModel(productModel) {
   }
 }
 
-app.get("products/model/:model", async (req, res) => {
+app.get("/products/model/:model", async (req, res) => {
   try {
     const products = await getProductsByModel(req.params.model);
     if (products.length != 0) {
