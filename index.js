@@ -16,9 +16,12 @@ const { initializeDatabase } = require("./db/db.connect");
 // read data from json file
 //const fs = require("fs");
 
+const Cart = require("./models/carts.models");
+
 const Product = require("./models/bicycles.models");
 const Contact = require("./models/contactUS.models");
 const Blog = require("./models/blogPost.models");
+const Cart = require("./models/carts.models");
 
 app.use(express.json());
 
@@ -371,6 +374,133 @@ app.post("/products/favorite/isFavorite/:productId", async (req, res) => {
     res.status(500).json({ error: "Failed to update favorite" });
   }
 });
+
+
+// Cart API
+
+async function addOrUpdateCartItem(productId, quantity){
+  try{
+    const product = await Product.findById(productId);
+    if(!product){
+      throw new Error("Product not found");
+    }
+
+    let cartItem = await Cart.findOne({productId});
+    if(cartItem){
+      cartItem.quantity = quantity;
+      await cartItem.save();
+    }else{
+      cartItem = new Cart({productId,quantity});
+      await cartItem.save();
+    }
+
+    return cartItem;
+
+  }catch(error){
+    throw error;
+  }
+}
+
+app.post("/cart", async(req,res)=>{
+  try{
+    const {productId, quantity} = res.body;
+    const cartItem = await addOrUpdateCartItem(productId,quantity);
+    res.status(200).json(cartItem); 
+  }catch(error){
+    res.status(500).json({error: error.message});
+  }
+})
+
+
+async function getAllCartItems(){
+  try{
+    const cartItems = await Cart.find().populate("productId");
+    return cartItems;
+  }catch(error){
+    throw error;
+  }
+}
+
+
+app.get("/cart", async(req,res)=>{
+  try{
+    const cartItems = await getAllCartItems();
+    if(cartItems.length > 0){
+      res.status(200).json(cartItems);
+    }else{
+      res.status(404).json({message: "Cart is empty"});
+    }
+  }catch(error){
+    res.status(500).json({error: error.message});
+  }
+})
+
+
+async function updateCartItemQuantity(cartItemId, quantity){
+  try{
+    const cartItem = await Cart.findById(cartItemId);
+    if(!cartItem){
+      throw new Error("Cart Item not found.")
+    }
+    cartItem.quantity = quantity;
+    await cartItem.save();
+    return cartItem;
+  }catch(error){
+    throw error;
+  }
+}
+
+
+app.post("/cart/:id", async(req,res)=>{
+  try{
+    const {quantity} = req.body;
+    const updatedCartItem = await updateCartItemQuantity(req.params.id,quantity);
+    res.status(200).json(updatedCartItem);
+  }catch(error){
+    res.status(500).json({error: error.message});
+  }
+})
+
+async function removeCartItem(cartItemId){
+  try{
+    const cartItem = await Cart.findByIdAndDelete(cartItemId);
+    if(!cartItem){
+      throw new Error("Cart item not found");
+    }
+    return cartItem;
+  }catch(error){
+    throw error;
+  }
+}
+
+
+app.delete("/cart/:id", async(req,res)=>{
+  try{
+    const removedCartItem = await removeCartItem(req.params.id);
+    res.status(200).json(removeCartItem);
+  }catch(error){
+    res.status(500).json({error: error.message});
+  }
+})
+
+
+async function clearCart(){
+  try{
+    await Cart.deleteMany({});
+    return {message: "All items removed from cart"};
+  }catch(error){
+    throw error;
+  }
+}
+
+app.delete("/cart", async(req,res)=>{
+  try{
+    const result = await clearCart();
+    res.status(200).json(result);
+  }catch(error){
+    res.status(500).json({error: error.message});
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
