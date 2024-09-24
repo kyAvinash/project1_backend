@@ -21,7 +21,7 @@ const Cart = require("./models/carts.models");
 const Product = require("./models/bicycles.models");
 const Contact = require("./models/contactUS.models");
 const Blog = require("./models/blogPost.models");
-const Cart = require("./models/carts.models");
+
 
 app.use(express.json());
 
@@ -403,7 +403,11 @@ async function addOrUpdateCartItem(productId, quantity){
 
 app.post("/cart", async(req,res)=>{
   try{
-    const {productId, quantity} = res.body;
+    if(!req.body || !req.body.productId || !req.body.quantity){
+      res.status(400).json({error: "Invalid request body"});
+      return;
+    }
+    const {productId, quantity} = req.body;
     const cartItem = await addOrUpdateCartItem(productId,quantity);
     res.status(200).json(cartItem); 
   }catch(error){
