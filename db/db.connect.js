@@ -1,12 +1,7 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-// Access your MongoDB connection string from secrets
-
-const MONGODB ="mongodb+srv://neoGStudent:avinash@neog.c1czakj.mongodb.net/majorProjectOne?retryWrites=true&w=majority&appName=neoG"
-
-//const mongoURI = process.env.MONGODB;
-
-const mongoURI =MONGODB;
+const mongoURI = process.env.MONGODB;
 
 const initializeDatabase = async () => {
   try {
