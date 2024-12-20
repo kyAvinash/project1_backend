@@ -22,6 +22,7 @@ const Product = require("./models/bicycles.models");
 const Contact = require("./models/contactUS.models");
 const Blog = require("./models/blogPost.models");
 
+const User = require("./models/users.models");
 
 app.use(express.json());
 
@@ -375,136 +376,236 @@ app.post("/products/favorite/isFavorite/:productId", async (req, res) => {
   }
 });
 
-
 // Cart API
 
-async function addOrUpdateCartItem(productId, quantity){
-  try{
+async function addOrUpdateCartItem(productId, quantity) {
+  try {
     const product = await Product.findById(productId);
-    if(!product){
+    if (!product) {
       throw new Error("Product not found");
     }
 
-    let cartItem = await Cart.findOne({productId});
-    if(cartItem){
+    let cartItem = await Cart.findOne({ productId });
+    if (cartItem) {
       cartItem.quantity = quantity;
       await cartItem.save();
-    }else{
-      cartItem = new Cart({productId,quantity});
+    } else {
+      cartItem = new Cart({ productId, quantity });
       await cartItem.save();
     }
 
     return cartItem;
-
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-app.post("/cart", async(req,res)=>{
-  try{
-    if(!req.body || !req.body.productId || !req.body.quantity){
-      res.status(400).json({error: "Invalid request body"});
+app.post("/cart", async (req, res) => {
+  try {
+    if (!req.body || !req.body.productId || !req.body.quantity) {
+      res.status(400).json({ error: "Invalid request body" });
       return;
     }
-    const {productId, quantity} = req.body;
-    const cartItem = await addOrUpdateCartItem(productId,quantity);
-    res.status(200).json(cartItem); 
-  }catch(error){
-    res.status(500).json({error: error.message});
+    const { productId, quantity } = req.body;
+    const cartItem = await addOrUpdateCartItem(productId, quantity);
+    res.status(200).json(cartItem);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-})
+});
 
-
-async function getAllCartItems(){
-  try{
+async function getAllCartItems() {
+  try {
     const cartItems = await Cart.find().populate("productId");
     return cartItems;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-
-app.get("/cart", async(req,res)=>{
-  try{
+app.get("/cart", async (req, res) => {
+  try {
     const cartItems = await getAllCartItems();
-    if(cartItems.length > 0){
+    if (cartItems.length > 0) {
       res.status(200).json(cartItems);
-    }else{
-      res.status(404).json({message: "Cart is empty"});
+    } else {
+      res.status(404).json({ message: "Cart is empty" });
     }
-  }catch(error){
-    res.status(500).json({error: error.message});
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-})
+});
 
-
-async function updateCartItemQuantity(cartItemId, quantity){
-  try{
+async function updateCartItemQuantity(cartItemId, quantity) {
+  try {
     const cartItem = await Cart.findById(cartItemId);
-    if(!cartItem){
-      throw new Error("Cart Item not found.")
+    if (!cartItem) {
+      throw new Error("Cart Item not found.");
     }
     cartItem.quantity = quantity;
     await cartItem.save();
     return cartItem;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-
-app.post("/cart/:id", async(req,res)=>{
-  try{
-    const {quantity} = req.body;
-    const updatedCartItem = await updateCartItemQuantity(req.params.id,quantity);
+app.post("/cart/:id", async (req, res) => {
+  try {
+    const { quantity } = req.body;
+    const updatedCartItem = await updateCartItemQuantity(
+      req.params.id,
+      quantity
+    );
     res.status(200).json(updatedCartItem);
-  }catch(error){
-    res.status(500).json({error: error.message});
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-})
+});
 
-async function removeCartItem(cartItemId){
-  try{
+async function removeCartItem(cartItemId) {
+  try {
     const cartItem = await Cart.findByIdAndDelete(cartItemId);
-    if(!cartItem){
+    if (!cartItem) {
       throw new Error("Cart item not found");
     }
     return cartItem;
-  }catch(error){
+  } catch (error) {
     throw error;
   }
 }
 
-
-app.delete("/cart/:id", async(req,res)=>{
-  try{
+app.delete("/cart/:id", async (req, res) => {
+  try {
     const removedCartItem = await removeCartItem(req.params.id);
     res.status(200).json(removeCartItem);
-  }catch(error){
-    res.status(500).json({error: error.message});
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-})
+});
 
-
-async function clearCart(){
-  try{
+async function clearCart() {
+  try {
     await Cart.deleteMany({});
-    return {message: "All items removed from cart"};
-  }catch(error){
+    return { message: "All items removed from cart" };
+  } catch (error) {
     throw error;
   }
 }
 
-app.delete("/cart", async(req,res)=>{
-  try{
+app.delete("/cart", async (req, res) => {
+  try {
     const result = await clearCart();
     res.status(200).json(result);
-  }catch(error){
-    res.status(500).json({error: error.message});
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// user code....
+
+
+function generateToken() {
+  // This function allows the server to authenticate the user without requiring them to log in again for every request.
+  return (
+    Math.random().toString(36).substring(2) +
+    Math.random().toString(36).substring(2)
+  );
+  // the final output will be a longer random alphanumeric string like -> 5g8kq2z1j4
+}
+
+async function registerUser(userData) {
+  try {
+    const { name, email, password } = userData;
+    const existingUser = await User.findOne({ email });
+
+    // if User already there.
+    if (existingUser) {
+      return { error: "User already exists" };
+    }
+
+    // create new user (here we are storing password in plain text.)
+    const newUser = new User({ name, email, password });
+    await newUser.save();
+    return { message: "User registered Successfully" };
+  } catch (error) {
+    return { error: "Error while registering user" };
+  }
+}
+
+async function loginUser(loginData){
+  try {
+    const {email,password} = loginData;
+
+    // if user is already there.
+    const user = await User.findOne({email});
+    if(!user){
+      return {error: "Invalid email or password"};
+    }
+
+    // here we are directly checking password in plaintext.
+    if(user.password !== password){
+      return {error: "Invalid email or password"};
+    }
+
+    // than now we need to generate a token
+    const token = generateToken();
+    user.token = token;
+    await user.save();
+    return {message: "Login successful", token};
+  } catch (error) {
+    return {error: "Error while logging in"};
+  }
+}
+
+
+// function for logout.
+async function logoutUser(userToken){
+  try {
+    // here first we need to find user by  token and remove the token
+    const user = await User.findOne({token: userToken});
+    if(!user){
+      return {error: "User not found"};
+    }
+
+    user.token = null; //we need to clear the token
+    await user.save();
+    return {message: "Logout successful"};
+  } catch (error) {
+    return {error: "Error while logging out"};
+  }
+}
+
+// all the routers of user.
+
+app.post("/register", async(req,res)=>{
+  const result = await registerUser(req.body);
+  if(result.error){
+    res.status(400).json({error: result.error});
+  }else{
+    res.status(201).json(result);
+  }
+});
+
+app.post("/login", async(req,res)=>{
+  const result = await loginUser(req.body);
+  if(result.error){
+    res.status(400).json({error: result.error});
+  }else{
+    res.json(result);
   }
 })
+
+app.post("/logout", async(req,res)=>{
+  const {token} = req.body;
+  const result = await logoutUser(token);
+  if(result.error){
+    res.status(400).json({error: result.error});
+  }else{
+    res.json(result);
+  }
+})
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
