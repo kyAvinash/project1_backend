@@ -81,6 +81,10 @@ function seedData(){
 
 // code for blog.
 
+app.get("/", async(req,res)=>{
+  res.send("This is cycleWala developed By Avinash");
+})
+
 async function getBlogData() {
   try {
     const blogs = await Blog.find();
